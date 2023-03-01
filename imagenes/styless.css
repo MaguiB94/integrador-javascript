@@ -1,0 +1,815 @@
+@import url('https://fonts.googleapis.com/css2? familia=Montserrat:wght@400;500&familia=Roboto+Mono&display=swap');
+
+:root {
+
+    --bg-color: #181717;
+    --red: #ee000c;
+    --white: #FFFFFF;
+    --gradient: linear-gradient(90deg, #181717 0%, #ee000c 100%);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: monospace
+}
+
+header {
+    background: var(--bg-color);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    padding: 0px 10px 0px 10px;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.header-list {
+    color: white;
+    font-size: 48px;
+    font-weight: 800;
+}
+
+
+.logo {
+    height: 60px;
+    padding-right: 85px;
+}
+
+.navbar,
+.navbar-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-list {
+    display: none;
+}
+
+.navbar-list a {
+    color: white;
+    font-size: 14px;
+}
+
+.navbar-list a:hover {
+    color: red;
+}
+
+
+.navbar {
+    gap: 150px;
+}
+
+.navbar1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    padding: 0px 10px;
+    position: fixed;
+}
+
+.navbar1 img {
+    margin-left: 100px;
+    width: 50px;
+}
+
+.cart-icon {
+    background: white;
+    height: 25px;
+    border: 2px solid;
+    padding: 1px 13px;
+    margin-top: 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 40%;
+    margin-left: 100%;
+    height: 24px;
+    transition: all 0.2s ease-out;
+}
+
+main {
+    margin-top: 80px;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.categories {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.category1 {
+    background: var(--gradient);
+    border: none;
+    padding: 20px 70px;
+    font-size: 14px;
+    font-weight: 800;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+
+.category {
+    background: var(--gradient);
+    border: none;
+    padding: 20px 70px;
+    font-size: 14px;
+    font-weight: 800;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#salmon {
+    padding: 70px 0px;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.salmon-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.salmon-info h2 {
+    color: var(--white);
+    font-size: 32px;
+    width: 100%;
+    font-weight: 800;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.salmon-text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.salmon-text p {
+    font-size: 16px;
+    font-weight: 600;
+    color: grey;
+}
+
+.salmon-roll {
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.salmon-roll img {
+    width: 80%;
+}
+
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+}
+
+.text h2 {
+    color: var(--white);
+    font-size: 32px;
+    width: 100%;
+    font-weight: 800;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.text1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+}
+
+.text1 p {
+    font-size: 16px;
+    font-weight: 600;
+    color: grey;
+}
+
+
+
+.productos {
+    width: 100%;
+    background: var(--bg-color);
+    padding: 55px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.productos img {
+    max-width: 1200px;
+    height: 400px;
+    width: 800px;
+}
+
+#rolls {
+    padding: 70px 0;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 60px;
+}
+
+#rolls h3 {
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.info1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.rolls2 {
+    padding: 25px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.rolls2 img {
+    height: 280px;
+    width: 280px;
+    cursor: pointer;
+}
+
+.rolls2 p {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 75%;
+    color: white;
+}
+
+.ver a {
+    background: linear-gradient(90deg, rgba(4, 4, 4, 1) 0%, rgba(0, 0, 0, 1) 52%, rgba(235, 5, 5, 1) 100%);
+    color: var(--white);
+    width: 80px;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.ver a:hover {
+    background: var(--bg-color);
+}
+
+footer {
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+}
+
+footer a,
+footer p {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+footer a:hover {
+    color: var(--red);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redsocial {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.instagram {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.whatsapp {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.maps {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+
+
+#menu-toggle,
+#cart-toggle,
+.menu-label {
+    display: none;
+}
+
+.cart {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    padding: 50px 30px;
+    background: var(--gradient);
+    border-left: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: calc(100vh - 65px);
+    overflow-y: scroll;
+    display: none;
+    z-index: 2;
+}
+
+.cart::-webkit-scrollbar {
+    display: none;
+}
+
+.cart h2 {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: black;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.cart-item img {
+    width: 75px;
+    height: 65px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-title {
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.item-price {
+    background: var(--white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.item-handler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.quantity-handler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px 5px;
+    color: white;
+    font-weight: 300;
+    transition: all 0.2s ease-in;
+}
+
+.item-quantity {
+    color: white;
+}
+
+.down {
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.up {
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.divider {
+    margin-top: 20px;
+    border: 0.5px solid black;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.cart p {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.btn-add,
+.btn-delete {
+    background: linear-gradient(90deg, rgba(4, 4, 4, 1) 0%, rgba(0, 0, 0, 1) 52%, rgba(235, 5, 5, 1) 100%);
+    color: white;
+    padding: 6px 0px;
+    border: 1px solid black;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 25px;
+}
+
+.btn-add:hover {
+    background: black;
+}
+
+
+
+.cart-total span {
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#cart-toggle:checked+.cart {
+    display: flex;
+}
+
+/*estilos para la pagina tablas.html*/
+
+#contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    max-width: 1200px;
+    width: 100%;
+}
+
+#contenido h1 {
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 25px 0;
+    width: 100%;
+}
+
+.product {
+    background: var(--bg-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.product img {
+    height: 250px;
+}
+
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.product-mid,
+.product-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-top h3 {
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    gap: 10px;
+}
+
+
+.product-mid span {
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.btn-agregar {
+    background: var(--gradient);
+    border: none;
+    padding: 10px 35px;
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+.btn-agregar:hover {
+    background: black;
+}
+
+/*estilo para pagina roll*/
+
+.roll-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 25px 0;
+}
+
+.container {
+    background: var(--bg-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.container img {
+    height: 300px;
+    width: 350px;
+}
+
+
+.product-top p {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+/*estilos para pagina hotroll*/
+
+.hot-roll {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 25px 0;
+}
+
+.hotrolls {
+    background: var(--bg-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.hotrolls img {
+    height: 300px;
+    width: 320px;
+}
+
+/*estilos para formulario de registro*/
+
+.form-register {
+    width: 400px;
+    background: var(--gradient);
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    box-shadow: rgba(253, 55, 55, 0.56) 0px 22px 70px 4px;
+}
+
+.form-register h3 {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.registro {
+    width: 100%;
+    background: var(--gradient);
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    border: 1px solid white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+}
+
+.form-register p {
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.form-register a {
+    color: var(--white);
+}
+
+.form-register a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.enviar {
+    width: 100%;
+    background: var(--bg-color);
+    border-radius: 30px;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.enviar:hover {
+    background: red;
+}
+
+.cuenta {
+    background-color: white;
+    margin-right: 100px;
+}
+
+
+/*formulario iniciar sesion*/
+
+.register {
+    width: 400px;
+    background: var(--gradient);
+    padding: 70px 25px;
+    margin-top: 40px;
+    border-radius: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    box-shadow: rgba(253, 55, 55, 0.56) 0px 22px 70px 4px;
+}
+
+.register h3 {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+
+.loguin {
+    width: 100%;
+    background: var(--gradient);
+    color: white;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    border: 1px solid white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+.register p {
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.register a {
+    color: var(--white);
+}
+
+.register a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.ingresa {
+    width: 100%;
+    background: var(--bg-color);
+    border-radius: 30px;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.ingresa:hover {
+    background: red;
+}
+
+.cuenta {
+    cursor: pointer;
+    transition: all 0.2s ease-out
+}

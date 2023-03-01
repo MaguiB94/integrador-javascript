@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2? familia=Montserrat:wght@400;500&familia=Roboto+Mono&display=swap');
+
+:root {
+
+    --bg-color: #181717;
+    --red: #ee000c;
+    --white: #FFFFFF;
+    --gradient: linear-gradient(90deg, #181717 0%, #ee000c 100%);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-size: 1.6rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+* {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+
+h1,
+h2,
+h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p,
+a {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.ocultar {
+    display: none;
+}
+
+
+.contenedor {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 95%;
+}
+
+.btn {
+    padding: 1rem 3rem;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    border: none;
+    border-radius: 2rem;
+    color: white;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.gradient {
+    background: linear-gradient(90deg, rgba(4, 4, 4, 1) 0%, rgba(0, 0, 0, 1) 52%, rgba(235, 5, 5, 1) 100%);
+}
+
+/*header*/
+.header1 {
+    background-image: url('../imagenes/nigiri.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 70rem;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+}
+
+
+.logo h2 {
+    color: white;
+    font-size: 3rem;
+}
+
+
+.logo h2 span {
+    color: v;
+}
+
+
+.contenido-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--bg-color);
+    box-shadow: 10px 10px 16px -6px rgb(241, 0, 0);
+}
+
+.navbar {
+    position: absolute;
+    left: 0;
+    top: 70px;
+    width: 100%;
+    animation: desplazamiento .5s ease-in-out;
+}
+
+.navbar a {
+    display: block;
+    font-size: 2rem;
+    padding: 1.1rem;
+    color: var(--white);
+    background-color: var(--bg-color);
+    transition: background-color .3s ease-in-out;
+}
+
+.navbar a:hover {
+    background-color: var(--red);
+    color: white;
+}
+
+.hamburguesa span {
+    width: 5rem;
+    height: 1rem;
+    border: 3px solid black;
+    background-color: var(--white);
+    display: block;
+}
+
+.nosotros {
+    background-color: var(--bg-color);
+    padding: 5rem;
+}
+
+.nst{
+    color: var(--white);
+    text-align: center;
+}
+
+.nst i {
+    font-size: 4rem;
+}
+
+.nst h3{
+    font-size: 2.5rem
+    ;
+}
+
+.nst p{
+    font-size: 2rem;
+}
+
+footer {
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+}
+
+footer a,
+footer p {
+    color: var(--white);
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+footer a:hover {
+    color: var(--red);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redsocial {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.instagram {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.whatsapp {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.maps {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+
+/*estilos tablas, rolls, hotrolls*/
+
+#products{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 25px 0;
+    width: 100%;
+}
+
+.products-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 25px 0;
+    width: 100%;
+}
+
+.product{
+    background: var(--bg-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.product img{
+    height: 250px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.product-mid,
+.product-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-top h2 {
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    gap: 10px;
+}
+
+.product-top p{
+    color: white;
+    font-size: 10px;
+    font-weight: 200;
+    gap: 10px;
+}
+
+
+.product-mid span {
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.btn-agregar {
+    background: var(--gradient);
+    border: none;
+    padding: 10px 35px;
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+.btn-agregar:hover {
+    background: black;
+}
+
+
+
+/*categorias*/
+
+.categories {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+.category {
+    background: var(--gradient);
+    border: none;
+    padding: 20px 70px;
+    font-size: 14px;
+    font-weight: 800;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+
