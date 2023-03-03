@@ -1,6 +1,6 @@
 const products = document.querySelector('.products-container')
 const categories = document.querySelector('.categories')
-const categoriesList = document.querySelectorALL('.category')
+const categoriesList = document.querySelectorAll('.category')
 
 
 
@@ -49,7 +49,7 @@ const renderProduct = ({id, imagen, titulo, descripcion, precio}) => {
             <p>${descripcion}</p>
         </div>
         <div class="product-mid">
-            <span>$${precio}</span>
+            <span>${precio}</span>
         </div>
         <button class="btn-agregar" 
         data-id='${id}'
@@ -65,7 +65,7 @@ const renderProduct = ({id, imagen, titulo, descripcion, precio}) => {
 
 
 
-const renderDividedProducts (index = 0) => {
+const renderDividedProducts = (index = 0) => {
     const productsToRender = productsController.dividedProducts[index]
 products.innerHTML = productsToRender.map(renderProduct).join('')
 }
@@ -83,4 +83,4 @@ renderProducts()
 
 
 }
-init    ()
+init()
