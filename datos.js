@@ -1,7 +1,7 @@
 const products = document.querySelector('.products-container')
 const categories = document.querySelector('.categories')
 const categoriesList = document.querySelectorAll('.category')
-
+const btnVer = document.querySelector('.btn-ver')
 
 
 
@@ -25,19 +25,19 @@ function mostrarMenu() {
 }
 
 
-function cerrarMenu(){
-    enlaces.forEach(enlace =>{
-enlace.addEventListener('click',(e)=>{
-0
-    if(e.target.tagName === 'A'){
-        navbar.classList.add('ocultar');
-    }
-});
+function cerrarMenu() {
+    enlaces.forEach(enlace => {
+        enlace.addEventListener('click', (e) => {
+
+            if (e.target.tagName === 'A') {
+                navbar.classList.add('ocultar');
+            }
+        });
     });
 }
 
 
-const renderProduct = ({id, imagen, titulo, descripcion, precio}) => {
+const renderProduct = ({ id, imagen, titulo, descripcion, precio }) => {
 
     return `
     
@@ -49,38 +49,81 @@ const renderProduct = ({id, imagen, titulo, descripcion, precio}) => {
             <p>${descripcion}</p>
         </div>
         <div class="product-mid">
-            <span>${precio}</span>
+            <span>$${precio}</span>
         </div>
         <button class="btn-agregar" 
         data-id='${id}'
         data-img='${imagen}'
         data-titulo='${titulo}'
         data-desc='${descripcion}'
-        data-precio='${precio}' >Agregar</button>
+        data-precio= $'${precio}'>Agregar</button>
     </div>
 </div>
       
-    ` 
+    `
 }
 
+
+const renderFilteredProducts = category => {
+    const productsList = productsData.filter(product => product, category === category)
+    products.innerHTML = productsList.map(renderProduct).join('')
+}
 
 
 const renderDividedProducts = (index = 0) => {
     const productsToRender = productsController.dividedProducts[index]
-products.innerHTML = productsToRender.map(renderProduct).join('')
+    products.innerHTML += productsToRender.map(renderProduct).join('')
 }
 
 
 const renderProducts = (index = 0, category = null) => {
-if (!category) {
-    renderDividedProducts(index)
+    if (!category) {
+        renderDividedProducts(index)
+    }
+    else {
+        renderFilteredProducts
+
+
+
+
+    }
 }
-else {}
-} 
+
+
+const isLastIndex = () => productsController.nextProductsIndex === productsController.productsLimit
+
+
+const showMoreProducts = () => {
+    renderProducts(productsController.nextProductsIndex);
+    productsController.nextProductsIndex++;
+    if (isLastIndex()) {
+        btnVer.classList.add('hidden');
+    }
+}
+
+
+const changeFilterState = selectedCategory => {
+    change
+}
+
+
+const applyFilter = e => {
+    if (!e.target.classList.contains('category')) return;
+    const clickedCategory = e - target.dataset.category
+    changeFilterState(clickedCategory)
+    if (!clickedCategory) {
+        products.innerHTML = '';
+        renderProducts()
+    } else {
+        renderProducts(0, clickedCategory);
+        productsController.nextProductsIndex = 1
+    }
+}
+
 
 const init = () => {
-renderProducts()
-
-
+    renderProducts()
+    btnVer.addEventListener('click', showMoreProducts)
+    categories.addEventListener('click', applyFilter)
 }
 init()

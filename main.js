@@ -5,15 +5,15 @@ const productsData = [
         imagen: "./imagenes/combinado2.jpg",
         titulo: "Tablas x 15u",
         descripcion: "Tablas combinadas",
-        precio: $4500,
+        precio: 4500,
         categoria: "Tablas",
     },
     {
         id: 2,
-        imagen: "./imagenes/combinado 30.jpg.jpg",
+        imagen: "./imagenes/combinado1.jpg",
         titulo: "Tablas x 30u",
         descripcion: "Tablas full salmón",
-        precio: $6500,
+        precio: 6500,
         categoria: "Tablas",
     },
     {
@@ -21,7 +21,7 @@ const productsData = [
         imagen: "./imagenes/hotroll1.png",
         titulo: "Hot roll Cuba",
         descripcion: "Roll rebozado relleno de arroz, queso y salmon cocido.",
-        precio: $950,
+        precio: 950,
         categoria: "Hot Roll",
     },
     {
@@ -29,7 +29,7 @@ const productsData = [
         imagen: "./imagenes/hotrolls3.jpg",
         titulo: "Hot roll Mexico",
         descripcion: "Roll relleno de arroz, salmon grill con salsa de mango.",
-        precio: $900,
+        precio: 900,
         categoria: "Hot Roll",
     },
     {
@@ -37,7 +37,7 @@ const productsData = [
         imagen: "./imagenes/hotroll4.jpg",
         titulo: "Hot roll Persia",
         descripcion: "Roll relleno de arroz, langostino y palta envuelto en salmón.",
-        precio: $880,
+        precio: 880,
         categoria: "Hot Roll",
     },
     {
@@ -45,7 +45,7 @@ const productsData = [
         imagen: "./imagenes/hotroll2.jpg",
         titulo: "Hot roll Caribe",
         descripcion: "Roll relleno de langostino con arroz rebozado con caviar.",
-        precio: $980,
+        precio: 980,
         categoria: "Hot Roll",
     },
     {
@@ -53,7 +53,7 @@ const productsData = [
         imagen: "./imagenes/11.jpg",
         titulo: "Roll Bs As",
         descripcion: "Roll relleno de salmón cocido, verdeo y arroz.",
-        precio: $850,
+        precio: 850,
         categoria: "Rolls",
     },
     {
@@ -61,7 +61,7 @@ const productsData = [
         imagen: "./imagenes/13.jpg",
         titulo: "Roll New York",
         descripcion: "Roll relleno de salmón, palta y queso Philadelphia.",
-        precio: $890,
+        precio: 890,
         categoria: "Rolls",
     },
     {
@@ -69,7 +69,7 @@ const productsData = [
         imagen: "./imagenes/14.jpg",
         titulo: "Roll Hawai",
         descripcion: "Roll relleno de arroz, mango y queso Philadelphia.",
-        precio: $850,
+        precio: 850,
         categoria: "Rolls",
     },
     {
@@ -77,7 +77,7 @@ const productsData = [
         imagen: "./imagenes/14.jpg",
         titulo: "Roll Hawai",
         descripcion: "Roll relleno de arroz, mango y queso Philadelphia.",
-        precio: $850,
+        precio: 850,
         categoria: "Rolls",
     },
     {
@@ -85,7 +85,7 @@ const productsData = [
         imagen: "./imagenes/4.jpg",
         titulo: "Nigiri salmón",
         descripcion: "Bocadito de arroz envuelto en salmón",
-        precio: $850,
+        precio: 850,
         categoria: "Rolls",
     },
     {
@@ -93,7 +93,7 @@ const productsData = [
         imagen: "./imagenes/15.jpg",
         titulo: "Roll California",
         descripcion: "Roll relleno de arroz, palta y atún.",
-        precio: $900,
+        precio: 900,
         categoria: "Rolls",
     },
 ];
@@ -109,7 +109,7 @@ const splitProducts = size => {
 }
 
 const productsController = {
-    dividedProducts: splitProducts(6),
+    dividedProducts: splitProducts(3),
     nextProductsIndex: 1,
-    productsLimit: splitProducts(6).length
+    productsLimit: splitProducts(3).length
 }
