@@ -64,28 +64,23 @@ const renderProduct = ({ id, imagen, titulo, descripcion, precio }) => {
 }
 
 
-const renderFilteredProducts = category => {
-    const productsList = productsData.filter(product => product, category === category)
-    products.innerHTML = productsList.map(renderProduct).join('')
+const renderFilteredProducts = (category) => {
+    const productsList = productsData.filter((product) => product.category === category);
+    products.innerHTML = productsList.map(renderProduct).join('');
 }
 
 
 const renderDividedProducts = (index = 0) => {
     const productsToRender = productsController.dividedProducts[index]
-    products.innerHTML += productsToRender.map(renderProduct).join('')
+    products.innerHTML += productsToRender.map(renderProduct).join('');
 }
 
 
 const renderProducts = (index = 0, category = null) => {
     if (!category) {
         renderDividedProducts(index)
-    }
-    else {
-        renderFilteredProducts
-
-
-
-
+    } else {
+        renderFilteredProducts(category);
     }
 }
 
@@ -102,28 +97,41 @@ const showMoreProducts = () => {
 }
 
 
-const changeFilterState = selectedCategory => {
-    change
+const changeBtnTodosState = (selectedCategory) => {
+    const categories = [...categoriesList];
+    categories.forEach((categoryBtn) => {
+if (categoryBtn.dataset.category !== selectedCategory) {
+    categoryBtn.classList.remove('todos');
+} else {
+    categoryBtn.classList.add('todos');
+}
+})
 }
 
 
-const applyFilter = e => {
+const changeFilterState = (selectedCategory) => {
+    changeBtnTodosState(selectedCategory)
+    changeShowMoreBtnState(selectedCategory)
+}
+
+
+const applyFilter = (e) => {
     if (!e.target.classList.contains('category')) return;
-    const clickedCategory = e - target.dataset.category
-    changeFilterState(clickedCategory)
+    const clickedCategory = e.target.dataset.category;
+    changeFilterState(clickedCategory);
     if (!clickedCategory) {
         products.innerHTML = '';
-        renderProducts()
+        renderProducts();
     } else {
         renderProducts(0, clickedCategory);
-        productsController.nextProductsIndex = 1
+        productsController.nextProductsIndex = 1;
     }
 }
 
 
 const init = () => {
-    renderProducts()
-    btnVer.addEventListener('click', showMoreProducts)
-    categories.addEventListener('click', applyFilter)
+    renderProducts();
+    btnVer.addEventListener('click', showMoreProducts);
+    categories.addEventListener('click', applyFilter);
 }
-init()
+init();

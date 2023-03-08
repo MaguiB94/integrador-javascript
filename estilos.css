@@ -62,7 +62,7 @@ a {
     color: white;
 }
 
-.btn:hover{
+.btn:hover {
     cursor: pointer;
 }
 
@@ -137,7 +137,7 @@ a {
     padding: 5rem;
 }
 
-.nst{
+.nst {
     color: var(--white);
     text-align: center;
 }
@@ -146,12 +146,11 @@ a {
     font-size: 4rem;
 }
 
-.nst h3{
-    font-size: 2.5rem
-    ;
+.nst h3 {
+    font-size: 2.5rem;
 }
 
-.nst p{
+.nst p {
     font-size: 2rem;
 }
 
@@ -212,46 +211,49 @@ footer a:hover {
 
 /*estilos tablas, rolls, hotrolls*/
 
-#products{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    padding: 25px 0;
-    width: 100%;
-}
-
-.products-container{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    padding: 25px 0;
-    width: 100%;
-}
-
-.product{
-    background: var(--bg-color);
-    padding: 20px 25px;
+#products {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 20px;
+    margin-left: 25px;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
 }
 
-.product img{
-    width: 25rem;
-    height: auto;
-    
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 35px 0;
+    max-width: 1200;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-color);
+    padding-bottom: 55px;
+    margin-left: 90px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.product img {
+    width: 30rem;
+    height: 30rem;
+
 }
 
 .product-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 10px;
 }
 
@@ -266,33 +268,33 @@ footer a:hover {
 
 .product-top h2 {
     color: white;
-    font-size: 22px;
-    font-weight: 900;
-    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    gap: 5px;
 }
 
-.product-top p{
+.product-top p {
     color: white;
-    font-size: 16px;
-    font-weight: 800;
-    gap: 10px;
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 3px;
 }
 
 
 .product-mid span {
     color: white;
-    font-size: 15px;
-    font-weight: 800;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .btn-agregar {
     background: var(--gradient);
     border: none;
-    padding: 10px 35px;
+    padding: 5px 50px 10px 50px;
     color: white;
     font-size: 14px;
-    font-weight: 800;
-    border-radius: 10px;
+    font-weight: 700;
+    border-radius: 20px;
     cursor: pointer;
     transition: all 0.2s ease-out;
 }
@@ -310,31 +312,45 @@ footer a:hover {
     align-items: center;
     justify-content: center;
     gap: 15px;
+    margin-bottom: 15px;
+    margin-top: 45px;
 }
 
 
 .category {
     background: var(--gradient);
     border: none;
-    padding: 20px 70px;
-    font-size: 14px;
-    font-weight: 800;
+    padding: 10px 25px;
+    margin-left: 50px;
+    font-size: 16px;
+    font-weight: 700;
     color: white;
     border-radius: 30px;
     cursor: pointer;
-    margin-bottom: 10px;
+}
+
+.category:hover {
+    background: var(--bg-color);
+}
+
+.todos {
+    background: var(--red);
 }
 
 
 .btn-ver {
     background: linear-gradient(90deg, rgba(4, 4, 4, 1) 0%, rgba(0, 0, 0, 1) 52%, rgba(235, 5, 5, 1) 100%);
     color: var(--white);
-    width: 95px;
+    width: 100px;
     padding: 10px 10px;
     border-radius: 25px;
     font-size: 14px;
     font-weight: 600;
+    display: flex;
+    justify-content: center;
     text-align: center;
+    margin-bottom: 30px;
+    margin-left: 95px;
 }
 
 .btn-ver:hover {
@@ -342,3 +358,6 @@ footer a:hover {
     cursor: pointer;
 }
 
+.hidden {
+    display: none;
+}
