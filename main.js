@@ -42,14 +42,6 @@ const productsData = [
     },
     {
         id: 6,
-        imagen: "./imagenes/hotroll2.jpg",
-        titulo: "Hot roll Caribe",
-        descripcion: "Langostino con arroz rebozado con caviar.",
-        precio: 980,
-        category: "hotrolls",
-    },
-    {
-        id: 7,
         imagen: "./imagenes/11.jpg",
         titulo: "Roll Bs As",
         descripcion: "Salmón cocido, verdeo y arroz.",
@@ -57,7 +49,7 @@ const productsData = [
         category: "rolls",
     },
     {
-        id: 8,
+        id: 7,
         imagen: "./imagenes/13.jpg",
         titulo: "Roll New York",
         descripcion: "Salmón, palta y queso Philadelphia.",
@@ -65,7 +57,7 @@ const productsData = [
         category: "rolls",
     },
     {
-        id: 9,
+        id: 8,
         imagen: "./imagenes/14.jpg",
         titulo: "Roll Hawai",
         descripcion: "Aarroz, mango y queso Philadelphia.",
@@ -73,7 +65,7 @@ const productsData = [
         category: "rolls",
     },
     {
-        id: 10,
+        id: 9,
         imagen: "./imagenes/14.jpg",
         titulo: "Roll Hawai",
         descripcion: "Arroz, mango y queso Philadelphia.",
@@ -81,7 +73,7 @@ const productsData = [
         category: "rolls",
     },
     {
-        id: 11,
+        id: 10,
         imagen: "./imagenes/4.jpg",
         titulo: "Nigiri salmón",
         descripcion: "Bocadito de arroz envuelto en salmón",
@@ -89,7 +81,7 @@ const productsData = [
         category: "rolls",
     },
     {
-        id: 12,
+        id: 11,
         imagen: "./imagenes/15.jpg",
         titulo: "Roll California",
         descripcion: "Arroz, palta y atún.",

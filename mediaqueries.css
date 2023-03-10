@@ -1,58 +1,211 @@
+/*Tablets */
 
-/*celular*/ 
+@media (max-width: 992px) {
+    .navbar {
+        gap: 10px;
+    }
 
-@media(min-width:768px) {
+    .cart-icon {
+        border: 0px solid;
+        height: 22px;
+        margin-left: 5px;
+    }
 
-    .hamburguesa {
+    .logo {
         display: none;
     }
 
-    .ocultar {
-        display: inline;
+
+    .header-list {
+        margin-left: 5px;
     }
 
-    .navbar a {
-        display: inline;
+    .navbar-list {
+        position: absolute;
+        top: 65px;
+        width: 100%;
+        flex-direction: column;
+        background-color: black;
+        border: 1px solid red;
+        border-top: none;
+        border-radius: 0px 0px 15px 15px;
+        align-items: flex-start;
+        padding: 45px 30px;
+        gap: 25px;
+        z-index: 2;
+        display: none;
     }
 
-    .navbar{
-        position: relative;
-        top: unset;
-        width: auto;
-        background-color: unset;
-        animation: unset;
+    .navbar-list a {
+        font-size: 16px;
     }
-    
 
-    
-}
-
-
-/*tablets*/
-@media(min-width:768px) {
-    .container-header {
+    .menu-label {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 80%;
+        background: white;
+        border: 1px solid black;
+        order: 2;
+        cursor: pointer;
     }
 
-.contenido-nosotros{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    column-gap: 1rem;
+    .menu-label img {
+        width: 25px;
+        height: 25px
+    }
+
+    .open-menu {
+        display: flex;
+    }
+
+    .portada {
+        width: 100%;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    #products {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .product-top h2,
+    .product-top p {
+        text-align: center;
+        width: 80%;
+    }
+
+    .product {
+        max-width: 80%;
+    }
+
+    .product-top img {
+        flex-direction: column;
+    }
+
+    .nst {
+        display: none;
+    }
+
+    .form-register,
+    .register {
+        justify-content: center;
+    }
+
 }
 
+/*Celulares*/
+
+@media (max-width: 576px) {
+
+    .cart {
+        left: 0;
+        width: 100%;
+        border: none;
+    }
+
+    .cart-icon {
+        height: 30px;
+    }
+
+    .cart-item {
+        flex-wrap: wrap;
+    }
+
+    .header-list {
+        color: white;
+        margin-left: 5%;
+        font-size: 25px;
+    }
+
+    .categories {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 25px;
+
+    }
+
+    .category {
+        font-size: 14px;
+        font-weight: 800;
+    }
+
+    .portada {
+        width: 90%;
+        max-width: unset;
+    }
+
+    #products {
+        width: 80%;
+    }
+
+    .product img {
+        height: 245px;
+        width: 285px;
+    }
+
+    .product-top h2 {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .product-top p {
+        width: 100%;
+        padding: 10px;
+        line-height: 30px;
+        gap: 50px;
+    }
+
+    .btn-ver {
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .products-container {
+        width: 80%;
+    }
+
+    .product-mid span {
+        font-size: 15px;
+        font-weight: 800;
+    }
+
+    /*estilo para formulario de registro*/
+
+    .form-register,
+    .register {
+        width: 80%;
+        max-width: unset;
+    }
+
+    .form-register h3,
+    .form-register p {
+        text-align: center;
+        width: 100%;
+        font-size: 15px;
+        font-weight: 300;
+    }
+
+    .registro,
+    .enviar {
+        width: 80%;
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    .cuenta {
+        display: none;
+    }
 
 }
-
-
-
-
-
-
-
-
-
-
-

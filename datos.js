@@ -3,37 +3,26 @@ const categories = document.querySelector('.categories')
 const categoriesList = document.querySelectorAll('.category')
 const btnVer = document.querySelector('.btn-ver')
 
+/*carrito y menu hamburguesa */
+
+const productsCart = document.querySelector('.cart-container')
+const btnComprar = document.querySelector('.btn-comprar')
+const btnBorrar = document.querySelector('.btn-borrar')
+const cartBubble = document.querySelector('.cart-bubble')
+const cartBtn = document.querySelector('.cart-label')
+const cartMenu = document.querySelector('.cart')
+const barsBtn = document.querySelector('.menu-label')
+const barsMenu = document.querySelector('.navbar-list')
+const overlay = document.querySelector('.overlay')
+const successModal = document.querySelector('.add-modal')
 
 
 
 
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-
-const hamburguesa = document.querySelector('.hamburguesa');
-const navbar = document.querySelector('.navbar');
-const enlaces = document.querySelectorAll('.navbar a')
-document.addEventListener('DOMContentLoaded', () => {
-    mostrarMenu();
-    cerrarMenu();
-});
-
-function mostrarMenu() {
-    hamburguesa.addEventListener('click', () => {
-        navbar.classList.toggle('ocultar');
-
-    });
-}
-
-
-function cerrarMenu() {
-    enlaces.forEach(enlace => {
-        enlace.addEventListener('click', (e) => {
-
-            if (e.target.tagName === 'A') {
-                navbar.classList.add('ocultar');
-            }
-        });
-    });
+const saveLocalStorage = (cartList) => {
+    localStorage.setItem('cart', JSON.stringify(cartList));
 }
 
 
@@ -106,6 +95,15 @@ if (categoryBtn.dataset.category !== selectedCategory) {
     categoryBtn.classList.add('todos');
 }
 })
+}
+
+
+const changeShowMoreBtnState = selectedCategory => {
+    if (!selectedCategory) {
+        btnVer.classList.remove('hidden');
+        return
+    }
+    btnVer.classList.add('hidden')
 }
 
 
