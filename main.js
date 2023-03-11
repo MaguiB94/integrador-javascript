@@ -10,7 +10,7 @@ const productsData = [
     },
     {
         id: 2,
-        imagen: "./imagenes/combinado1.jpg",
+        imagen: "./imagenes/combinado30.jpg",
         titulo: "Tablas x 30u",
         descripcion: "Tablas full salmón",
         precio: 6500,

@@ -6,6 +6,7 @@ const btnVer = document.querySelector('.btn-ver')
 /*carrito y menu hamburguesa */
 
 const productsCart = document.querySelector('.cart-container')
+const total = document.querySelector('.total')
 const btnComprar = document.querySelector('.btn-comprar')
 const btnBorrar = document.querySelector('.btn-borrar')
 const cartBubble = document.querySelector('.cart-bubble')
@@ -89,12 +90,12 @@ const showMoreProducts = () => {
 const changeBtnTodosState = (selectedCategory) => {
     const categories = [...categoriesList];
     categories.forEach((categoryBtn) => {
-if (categoryBtn.dataset.category !== selectedCategory) {
-    categoryBtn.classList.remove('todos');
-} else {
-    categoryBtn.classList.add('todos');
-}
-})
+        if (categoryBtn.dataset.category !== selectedCategory) {
+            categoryBtn.classList.remove('todos');
+        } else {
+            categoryBtn.classList.add('todos');
+        }
+    })
 }
 
 
@@ -127,9 +128,107 @@ const applyFilter = (e) => {
 }
 
 
+const toggleMenu = () => {
+    barsMenu.classList.toggle('open-menu');
+    if (cartMenu.classList.contains('open-cart')) {
+        cartMenu.classList.remove('open-cart')
+        return;
+    }
+    overlay.classList.toggle('show-overlay')
+}
+
+
+const toggleCart = () => {
+    cartMenu.classList.toggle('open-cart');
+    if (barsMenu.classList.contains('open-menu')) {
+        barsMenu.classList.remove('open-menu');
+        return;
+    }
+    overlay.classList.toggle('show-overlay')
+}
+
+const closeOnScroll = () => {
+    if (
+        !barsMenu.classList.contains('open-menu') &&
+        !cartMenu.classList.contains('open-cart')
+    ) return;
+
+    barsMenu.classList.remove('open-menu')
+    cartMenu.classList.remove('open-cart')
+    overlay.classList.remove('show-overlay')
+}
+
+const closeOnClick = (e) => {
+    if (!e.target.classList.contains('navbar-link')) return;
+    barsMenu.classList.remove('open-menu');
+    overlay.classList.remove('show-overlay');
+}
+
+
+const closeOnOverlayClick = () => {
+    barsMenu.classList.remove('open-menu')
+    cartMenu.classList.remove('open-cart')
+    overlay.classList.remove('show-overlay')
+}
+
+
+const renderCartProduct = ({ id, name, precio, img, quantity }) => {
+    return `
+ <div class="cart-item">
+   <img src=${img} alt="carrito">
+    <div class="item-info">
+     <h3 class="item-title">${name}</h3>
+     <span class="item-price">${precio}</span>
+ </div>
+ <div class="item-handler">
+     <span class="quantity-handler down" data-id=${id}>-</span>
+     <span class="item-quantity">${quantity}</span>
+     <span class="quantity-handler up" data-id=${id}>+</span>
+ </div>
+</div>
+ 
+ `
+}
+
+
+const renderCart = () => {
+    if (!cart.length) {
+        productsCart.innerHTML = `<p class="empty-msg">No hay productos en el carrito.</p>`
+        return;
+    }
+    productsCart.innerHTML = cart.map(renderCartProduct).join('')
+
+}
+
+const getCartTotal = () => {
+    return cart.reduce((accum, precioValue) => accum + Number(precioValue.precio) * precioValue.quantity, 0);
+}
+
+
+const showTotal = () => {
+    total.innerHTML = `${getCartTotal().tofixed(2)} $`
+}
+
+
+
+
+
+
 const init = () => {
     renderProducts();
     btnVer.addEventListener('click', showMoreProducts);
     categories.addEventListener('click', applyFilter);
+
+    barsBtn.addEventListener('click', toggleMenu)
+    cartBtn.addEventListener('click', toggleCart)
+
+    window.addEventListener('scroll', closeOnScroll)
+    barsMenu.addEventListener('click', closeOnClick)
+    overlay.addEventListener('click', closeOnOverlayClick)
+
+
+    document.addEventListener('DOMContentLoaded', renderCart);
+    document.addEventListener('DOMContentLoaded', showTotal)
+
 }
 init();

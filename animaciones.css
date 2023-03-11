@@ -5,22 +5,19 @@ html {
 
 .overlay {
     position: absolute;
-    top: 75px;
+    top: 65px;
     left: 0;
     height: 100vh;
     width: 100%;
     z-index: 1;
-
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background: transparent;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     display: none;
 }
 
-#cart-toggle:checked~.overlay {
-    display: block;
-}
 
-#menu-toggle:checked~.overlay {
+.show-overlay {
     display: block;
 }
 
@@ -33,7 +30,7 @@ html {
     content: "";
     height: 2px;
     width: 100%;
-    background-color: white;
+    background: white;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -42,12 +39,13 @@ html {
     transform: transform 0.15s ease;
 }
 
-
-
-
 .navbar-list li a:hover::after {
     transform-origin: bottom left;
     transform: scaleX(1);
+}
+
+.cart-icon {
+    transition: all 0.2s ease-out;
 }
 
 .cart-icon:hover {
@@ -61,10 +59,14 @@ html {
     transition: all 0.2s ease-in;
 }
 
-.btn-ver a:hover,
+.btn-agregar {
+    transition: all 0.2s ease-out;
+}
+
 .btn-agregar:hover,
 .btn-comprar:hover,
-.btn-borrar:hover .enviar,
+.btn-borrar:hover,
+.enviar,
 .ingresar {
     background-color: black;
     transition: all 0.2s ease-in;
@@ -140,7 +142,13 @@ html {
 }
 
 .btn-ver {
-    animation: fade 0.8s ease-in forwards, slide-up 1.3s ease-in-out;
+    transition: all 0.2s ease-out;
+}
+
+.btn-ver:hover {
+    background-color: black;
+    color: white;
+    transition: all 0.2s ease-in;
 }
 
 @keyframes blink {
@@ -195,11 +203,6 @@ html {
 .form-register p:hover {
     transform: scale(1.02);
     transition: all 0.1s linear;
-}
-
-.cuenta:hover {
-    background-color: red;
-    transition: all 0.2s ease-in;
 }
 
 .category:hover {

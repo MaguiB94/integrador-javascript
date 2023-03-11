@@ -17,13 +17,15 @@
 
 
     .header-list {
-        margin-left: 5px;
+        margin-left: 100px;
     }
 
     .navbar-list {
         position: absolute;
-        top: 65px;
-        width: 100%;
+        top: 100px;
+        left: 5%;
+        right: 5%;
+        width: 90%;
         flex-direction: column;
         background-color: black;
         border: 1px solid red;
@@ -37,12 +39,12 @@
     }
 
     .navbar-list a {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .menu-label {
         display: flex;
-        background: white;
+        background-color: white;
         border: 1px solid black;
         order: 2;
         cursor: pointer;
@@ -194,6 +196,7 @@
         text-align: center;
         width: 100%;
         font-size: 15px;
+
         font-weight: 300;
     }
 
@@ -204,8 +207,8 @@
         font-weight: 300;
     }
 
-    .cuenta {
-        display: none;
-    }
 
 }
+
+
+  

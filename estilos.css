@@ -22,14 +22,21 @@ header {
     background: var(--bg-color);
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 100px;
     padding: 0px 10px 0px 10px;
     position: fixed;
     top: 0px;
-    z-index: 2;
+    z-index: 999;
 }
+
+.header-list {
+    color: white;
+    font-size: 35px;
+    font-weight: 800;
+}
+
 
 .logo {
     height: 60px;
@@ -41,34 +48,27 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-}
-
-.navbar-list {
-    display: none;
 }
 
 .navbar-list a {
     color: white;
     font-size: 14px;
+    
 }
 
 .navbar-list a:hover {
     color: red;
 }
 
-
 .navbar {
-    gap: 150px;
+    gap: 90px;
 }
 
-.header-list {
-    color: white;
-    font-size: 40px;
-    font-weight: 800;
+.navbar-list {
+    gap: 25px;
 }
 
-.navbar-list li:first-child>a {
+.navbar-list li:first-child > a {
     color: white;
     font-weight: 600;
 }
@@ -81,8 +81,8 @@ header {
     border-radius: 30px;
     font-size: 18px;
     cursor: pointer;
-    transition: all 0.2s ease-out;
     height: 25px;
+    right: 15px;
     margin-top: 25px;
     margin-bottom: 40%;
     position: relative;
@@ -124,8 +124,9 @@ header {
     gap: 30px;
     height: calc(100vh - 65px);
     overflow-y: scroll;
-    display: none;
+    display: flex;
     z-index: 2;
+    transform: translate(200%);
 }
 
 .cart-container {
@@ -148,7 +149,7 @@ header {
 .cart-item {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
     background-color: black;
     padding: 20px;
@@ -164,6 +165,7 @@ header {
 .item-info {
     display: flex;
     flex-direction: column;
+    min-width: 100px;
 }
 
 .item-title {
@@ -225,7 +227,7 @@ header {
     width: 100%;
 }
 
-.cart p {
+.cart-total p {
     color: white;
     font-size: 14px;
     font-weight: 700;
@@ -242,21 +244,12 @@ header {
     border-radius: 25px;
 }
 
-.btn-add:hover {
-    background: black;
-}
-
-
-
 .cart-total span {
     color: white;
     font-weight: 500;
     font-size: 18px;
 }
 
-#cart-toggle:checked+.cart {
-    display: flex;
-}
 
 .open-cart {
     transform: translate(0%);
@@ -270,6 +263,10 @@ header {
 
 .menu-label {
     display: none;
+}
+
+.menu-icon:hover {
+    background-color: red;
 }
 
 /*Foto portada*/
@@ -473,14 +470,14 @@ footer a:hover {
 
 .product-top h2 {
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     gap: 5px;
 }
 
 .product-top p {
     color: white;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 500;
     margin-top: 3px;
 }
@@ -600,3 +597,136 @@ footer a:hover {
     transform: translateY(0);
     transition: all 0.5s ease-in;
 }
+
+
+    /*estilos para formulario de registro*/
+
+.form-register {
+    width: 400px;
+    background: var(--gradient);
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 40px;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    box-shadow: rgba(253, 55, 55, 0.56) 0px 22px 70px 4px;
+}
+
+.form-register h3 {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.registro {
+    width: 100%;
+    background: var(--gradient);
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    border: 1px solid white;
+    font-size: 18px;
+}
+
+.form-register p {
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.form-register a {
+    color: var(--white);
+}
+
+.form-register a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.enviar {
+    width: 100%;
+    background: var(--bg-color);
+    border-radius: 30px;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.enviar:hover {
+    background: red;
+}
+
+
+/*formulario iniciar sesion*/
+
+.register {
+    width: 400px;
+    background: var(--gradient);
+    padding: 70px 25px;
+    margin-top: 40px;
+    border-radius: 40px;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    box-shadow: rgba(253, 55, 55, 0.56) 0px 22px 70px 4px;
+}
+
+.register h3 {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+
+.loguin {
+    width: 100%;
+    background: var(--gradient);
+    color: white;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    border: 1px solid white;
+    font-size: 16px;
+}
+
+.register p {
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.register a {
+    color: var(--white);
+}
+
+.register a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.ingresa {
+    width: 100%;
+    background: var(--bg-color);
+    border-radius: 30px;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    
+}
+
+.ingresa:hover {
+    background: red;
+}
+
