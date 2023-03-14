@@ -172,12 +172,12 @@ const closeOnOverlayClick = () => {
 }
 
 
-const renderCartProduct = ({ id, name, precio, img, quantity }) => {
+const renderCartProduct = ({ id, nombre, precio, imagen, quantity }) => {
     return `
  <div class="cart-item">
-   <img src=${img} alt="carrito">
+   <img src=${imagen} alt="carrito">
     <div class="item-info">
-     <h3 class="item-title">${name}</h3>
+     <h3 class="item-title">${titulo}</h3>
      <span class="item-price">${precio}</span>
  </div>
  <div class="item-handler">
@@ -201,17 +201,53 @@ const renderCart = () => {
 }
 
 const getCartTotal = () => {
-    return cart.reduce((accum, precioValue) => accum + Number(precioValue.precio) * precioValue.quantity, 0);
+    return cart.reduce((accum, currentValue) => accum + Number(currentValue.precio) * currentValue.quantity, 0);
 }
 
 
 const showTotal = () => {
-    total.innerHTML = `${getCartTotal().tofixed(2)} $`
+    total.innerHTML = `${getCartTotal().tofixed(2)}`;
+}
+
+const isExistingCartProduct = ({ id }) => cart.some(product => product.id === id)
+
+const createCartProduct = product => {
+    cart = [...cart, { ...product, quantity: 1 }]
+}
+
+const showSuccessModal = msg => {
+    successModal.classList.add('active-modal');
+    successModal.textContent = msg;
+    setTimeout(() => {
+        successModal.classList.remove('active-modal')
+    }, 1500)
+}
+
+const checkCartState = () => {
+    saveLocalStorage()
+    renderCart()
+    showTotal()
+
 }
 
 
+const addProduct = (e) => {
+    if (!e.target.classList.contains('btn-agregar')) return;
+const { id, imagen, titulo, descripcion, precio } = e.target.dataset;
+
+const product = { id, imagen, titulo, descripcion, precio}
+if (isExistingCartProduct(product)) {
 
 
+} else {
+
+    createCartProduct(product)
+ showSuccessModal('El producto se agrego al carrito')
+}
+
+checkCartState()
+
+}
 
 
 const init = () => {
@@ -228,7 +264,13 @@ const init = () => {
 
 
     document.addEventListener('DOMContentLoaded', renderCart);
-    document.addEventListener('DOMContentLoaded', showTotal)
+    document.addEventListener('DOMContentLoaded', showTotal);
+
+    product.addEventListener('click', addProduct)
+
+
+
+
 
 }
 init();
