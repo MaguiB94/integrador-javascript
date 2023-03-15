@@ -22,8 +22,8 @@ const successModal = document.querySelector('.add-modal')
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-const saveLocalStorage = (cartList) => {
-    localStorage.setItem('cart', JSON.stringify(cartList));
+const saveLocalStorage = (cart) => {
+    localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 
@@ -46,7 +46,7 @@ const renderProduct = ({ id, imagen, titulo, descripcion, precio }) => {
         data-img='${imagen}'
         data-titulo='${titulo}'
         data-desc='${descripcion}'
-        data-precio= $'${precio}'>Agregar</button>
+        data-precio='${precio}'>Agregar</button>
     </div>
 </div>
       
@@ -172,10 +172,10 @@ const closeOnOverlayClick = () => {
 }
 
 
-const renderCartProduct = ({ id, nombre, precio, imagen, quantity }) => {
+const renderCartProduct = ({ id, titulo, precio, img, quantity }) => {
     return `
  <div class="cart-item">
-   <img src=${imagen} alt="carrito">
+   <img src=${img} alt="carrito">
     <div class="item-info">
      <h3 class="item-title">${titulo}</h3>
      <span class="item-price">${precio}</span>
@@ -206,12 +206,12 @@ const getCartTotal = () => {
 
 
 const showTotal = () => {
-    total.innerHTML = `${getCartTotal().tofixed(2)}`;
+    total.innerHTML = `${getCartTotal().toFixed(2)}`;
 }
 
 const isExistingCartProduct = ({ id }) => cart.some(product => product.id === id)
 
-const createCartProduct = product => {
+const createCartProduct = (product) => {
     cart = [...cart, { ...product, quantity: 1 }]
 }
 
@@ -233,19 +233,19 @@ const checkCartState = () => {
 
 const addProduct = (e) => {
     if (!e.target.classList.contains('btn-agregar')) return;
-const { id, imagen, titulo, descripcion, precio } = e.target.dataset;
+    const { id, img, titulo, desc, precio } = e.target.dataset;
 
-const product = { id, imagen, titulo, descripcion, precio}
-if (isExistingCartProduct(product)) {
+    const product = { id, img, titulo, desc, precio }
+    if (isExistingCartProduct(product)) {
 
 
-} else {
+    } else {
 
-    createCartProduct(product)
- showSuccessModal('El producto se agrego al carrito')
-}
+        createCartProduct(product)
+        showSuccessModal('El producto se agrego al carrito')
+    }
 
-checkCartState()
+    checkCartState()
 
 }
 
@@ -266,7 +266,7 @@ const init = () => {
     document.addEventListener('DOMContentLoaded', renderCart);
     document.addEventListener('DOMContentLoaded', showTotal);
 
-    product.addEventListener('click', addProduct)
+    products.addEventListener('click', addProduct)
 
 
 
