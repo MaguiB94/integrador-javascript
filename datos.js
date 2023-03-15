@@ -22,7 +22,7 @@ const successModal = document.querySelector('.add-modal')
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-const saveLocalStorage = (cart) => {
+const saveLocalStorage = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
@@ -230,6 +230,11 @@ const checkCartState = () => {
 
 }
 
+const addUnitToProduct = (product) => {
+    cart = cart.map(cartProduct => cartProduct.id === product.id ?
+        { ...cartProduct, quantity: cartProduct.quantity + 1 } :
+        cartProduct)
+}
 
 const addProduct = (e) => {
     if (!e.target.classList.contains('btn-agregar')) return;
@@ -237,8 +242,8 @@ const addProduct = (e) => {
 
     const product = { id, img, titulo, desc, precio }
     if (isExistingCartProduct(product)) {
-
-
+        addUnitToProduct(product)
+        showSuccessModal('Se agrego una unidad al carrito')
     } else {
 
         createCartProduct(product)
