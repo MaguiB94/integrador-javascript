@@ -233,7 +233,7 @@ const disableBtn = button => {
 
 
 const checkCartState = () => {
-    saveLocalStorage(cart)
+    saveLocalStorage()
     renderCart()
     showTotal()
     disableBtn(btnComprar)
