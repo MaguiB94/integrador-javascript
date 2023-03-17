@@ -18,6 +18,16 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body::-webkit-scrollbar {
+    width: 8px;
+background: var(--bg-color);
+}
+
+body::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 15px;
+}
+
 header {
     background: var(--bg-color);
     width: 100%;
@@ -53,7 +63,7 @@ header {
 .navbar-list a {
     color: white;
     font-size: 14px;
-    
+
 }
 
 .navbar-list a:hover {
@@ -68,7 +78,7 @@ header {
     gap: 25px;
 }
 
-.navbar-list li:first-child > a {
+.navbar-list li:first-child>a {
     color: white;
     font-weight: 600;
 }
@@ -136,7 +146,12 @@ header {
 }
 
 .cart::-webkit-scrollbar {
-    display: none;
+    width: 7px;
+}
+
+.cart::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
 }
 
 .cart h2 {
@@ -605,7 +620,7 @@ footer a:hover {
 }
 
 
-    /*estilos para formulario de registro*/
+/*estilos para formulario de registro*/
 
 .form-register {
     width: 400px;
@@ -729,10 +744,24 @@ footer a:hover {
     font-size: 16px;
     font-weight: 800;
     cursor: pointer;
-    
+
 }
 
 .ingresa:hover {
     background: red;
 }
 
+.form-parent.error input {
+border: 2px solid red;
+}
+
+.form-parent small {
+    color: black;
+    max-width: 300px;
+    text-align: center;
+    padding: 7px 0;
+} 
+
+.form-parent.success input {
+    border: 2px solid green;
+}

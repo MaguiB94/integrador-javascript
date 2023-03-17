@@ -18,8 +18,6 @@ const overlay = document.querySelector('.overlay')
 const successModal = document.querySelector('.add-modal')
 
 
-
-
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 const saveLocalStorage = () => {
@@ -99,7 +97,7 @@ const changeBtnTodosState = (selectedCategory) => {
 }
 
 
-const changeShowMoreBtnState = selectedCategory => {
+const changeShowMoreBtnState = (selectedCategory) => {
     if (!selectedCategory) {
         btnVer.classList.remove('hidden');
         return
