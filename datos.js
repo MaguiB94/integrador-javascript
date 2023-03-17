@@ -178,7 +178,7 @@ const renderCartProduct = ({ id, titulo, precio, img, quantity }) => {
    <img src=${img} alt="carrito">
     <div class="item-info">
      <h3 class="item-title">${titulo}</h3>
-     <span class="item-price">${precio}</span>
+     <span class="item-price">$${precio}</span>
  </div>
  <div class="item-handler">
      <span class="quantity-handler down" data-id=${id}>-</span>
@@ -223,10 +223,22 @@ const showSuccessModal = msg => {
     }, 1500)
 }
 
+const disableBtn = button => {
+    if (!cart.length) {
+        button.classList.add('disabled')
+    } else {
+        button.classList.remove('disabled')
+    }
+}
+
+
 const checkCartState = () => {
-    saveLocalStorage()
+    saveLocalStorage(cart)
     renderCart()
     showTotal()
+    disableBtn(btnComprar)
+    disableBtn(btnBorrar)
+    renderCartBubble()
 
 }
 
@@ -251,7 +263,77 @@ const addProduct = (e) => {
     }
 
     checkCartState()
+}
 
+const renderCartBubble = () => {
+    cartBubble.textContent = cart.reduce((acc, cur) => acc + cur.quantity, 0)
+}
+
+const resetCartItems = () => {
+    cart = [];
+    checkCartState()
+}
+
+
+const completeCartAction = (confirmMsg, successMsg) => {
+    if (!cart.length) return;
+    if (window.confirm(confirmMsg)) {
+        resetCartItems()
+        alert(successMsg)
+    }
+}
+
+const completeBuy = () => {
+    completeCartAction(
+        "¿Desea completar su compra?",
+        "Gracias por la compra!");
+}
+
+const deleteCart = () => {
+    completeCartAction(
+        "¿Quiere eliminar todos los productos del carrito?",
+        "El carrito se ha vaciado"
+    );
+}
+
+const handlePlusBtnEvent = id => {
+    const existingProduct = cart.find(product => product.id === id)
+    addUnitToProduct(existingProduct);
+}
+
+
+const removeProductFromCart = ({ id }) => {
+    cart = cart.filter(product => product.id !== id)
+    checkCartState()
+}
+
+
+const substractProductUnit = ({ id }) => {
+    cart = cart.map(product => product.id === id ? { ...product, quantity: product.quantity - 1 } : product)
+}
+
+const handleMinutsBtnEvent = id => {
+    const existingProduct = cart.find(product => product.id === id)
+
+    if (existingProduct.quantity === 1) {
+       if (window.confirm('¿Desea eliminar el producto del carrito?')) {
+            removeProductFromCart(existingProduct)
+    }
+        return
+    }
+        substractProductUnit(existingProduct)
+    }
+
+
+const handleQuantity = e => {
+    if (e.target.classList.contains('down')) {
+        handleMinutsBtnEvent(e.target.dataset.id)
+
+    }
+    else if (e.target.classList.contains('up')) {
+        handlePlusBtnEvent(e.target.dataset.id);
+    }
+    checkCartState()
 }
 
 
@@ -271,11 +353,15 @@ const init = () => {
     document.addEventListener('DOMContentLoaded', renderCart);
     document.addEventListener('DOMContentLoaded', showTotal);
 
+
+    productsCart.addEventListener('click', handleQuantity)
     products.addEventListener('click', addProduct)
+    btnComprar.addEventListener('click', completeBuy)
+    btnBorrar.addEventListener('click', deleteCart)
 
-
-
-
+    disableBtn(btnBorrar)
+    disable(btnComprar)
+    renderCartBubble()
 
 }
 init();
