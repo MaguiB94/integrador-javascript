@@ -15,29 +15,29 @@ const PASSWORD_REGEX =
 
 
 
-const isEmpty = value => value === '';
+const isEmpty = (value) => value === '';
 
 const isBetween = (length, min, max) => length > min && length < max;
 
-const isEmailValid = email => EMAIL_REGEX.test(email)
+const isEmailValid = (email) => EMAIL_REGEX.test(email)
 
-const isPasswordValid = password => PASSWORD_REGEX.test(password)
+const isPasswordValid = (password) => PASSWORD_REGEX.test(password)
 
 
 const showError = (input, message) => {
-const formParent = input.parentElement;
-formParent.classList.remove('success')
-formParent.classList.add('error')
-const errorContainer = formParent.querySelector('small')
-errorContainer.textContent = message
+    const formParent = input.parentElement;
+    formParent.classList.remove('success')
+    formParent.classList.add('error')
+    const errorContainer = formParent.querySelector('small')
+    errorContainer.textContent = message
 }
 
 const showSuccess = (input) => {
-const formParent = input.parentElement;
-formParent.classList.remove('erorr')
-formParent.classList.add('success')
-const errorContainer = formParent.querySelector('small')
-errorContainer.textContent = ''
+    const formParent = input.parentElement;
+    formParent.classList.remove('erorr')
+    formParent.classList.add('success')
+    const errorContainer = formParent.querySelector('small')
+    errorContainer.textContent = ''
 }
 
 
@@ -48,18 +48,18 @@ const checkNombres = () => {
     const min = 4
     const max = 15
 
-const nombres = nombresInput.value.trim()
+    const nombres = nombresInput.value.trim()
 
-if (isEmpty(nombres)) {
-    showError(nombresInput,'El nombre es obligatorio')
-} else if (!isBetween(nombres.length, min, max)) {
-    showError(nombresInput, `Debe tener entre ${min} y ${max} caracteres`)
-} else {
-showSuccess(nombresInput)
-    valid = true
+    if (isEmpty(nombres)) {
+        showError(nombresInput, 'El nombre es obligatorio')
+    } else if (!isBetween(nombres.length, min, max)) {
+        showError(nombresInput, `Debe tener entre ${min} y ${max} caracteres`)
+    } else {
+        showSuccess(nombresInput)
+        valid = true
+    }
+    return valid
 }
-return valid
-} 
 
 
 const checkApellido = () => {
@@ -68,17 +68,17 @@ const checkApellido = () => {
     const min = 4
     const max = 15
 
-const apellido = apellidoInput.value.trim()
+    const apellido = apellidoInput.value.trim()
 
-if (isEmpty(apellido)) {
-    showError(apellidoInput,'El apellido es obligatorio')
-} else if (!isBetween(apellido.length, min, max)) {
-    showError(apellidoInput, `Debe tener entre ${min} y ${max} caracteres`)
-} else {
-showSuccess(apellidoInput)
-    valid = true
-}
-return valid
+    if (isEmpty(apellido)) {
+        showError(apellidoInput, 'El apellido es obligatorio')
+    } else if (!isBetween(apellido.length, min, max)) {
+        showError(apellidoInput, `Debe tener entre ${min} y ${max} caracteres`)
+    } else {
+        showSuccess(apellidoInput)
+        valid = true
+    }
+    return valid
 }
 
 
@@ -96,7 +96,7 @@ const checkEmail = () => {
         showSuccess(emailInput)
         valid = true
     }
- return valid   
+    return valid
 }
 
 
@@ -114,19 +114,53 @@ const checkPassword = () => {
         showSuccess(passwordInput)
         valid = true
     }
- return valid   
+    return valid
 }
 
 form.addEventListener('submit', e => {
-e.preventDefault()
+    e.preventDefault()
 
-const isNombresValid = checkNombres()
-const isApellidoValid = checkApellido()
-const isEmailValid = checkEmail()
-const isPasswordValid = checkPassword()
+    const isNombresValid = checkNombres()
+    const isApellidoValid = checkApellido()
+    const isEmailValid = checkEmail()
+    const isPasswordValid = checkPassword()
 
-const isFormValid = isNombresValid && isApellidoValid && isEmailValid && isPasswordValid;
-if (isFormValid) {
-    form.submit()
+    const isFormValid = isNombresValid && isApellidoValid && isEmailValid && isPasswordValid;
+    if (isFormValid) {
+        form.submit()
+    }
+});
+
+
+const debounce = (fn, delay = 500) => {
+    let timeoutId;
+    return (...args) => {
+        if (timeoutId) clearTimeout(timeoutId);
+
+        timeoutId = setTimeout(() => {
+            fn.apply(null, args)
+        }, delay)
+    }
 }
-})
+
+form.addEventListener(
+    'input',
+    debounce(
+        (e) => {
+            switch (e.target.id) {
+                case "nombres":
+                    checkNombres();
+                    break;
+                case "apellido":
+                    checkApellido();
+                    break;
+                case "email":
+                    checkEmail();
+                    break;
+                case "password":
+                    checkPassword();
+                    break;
+            }
+
+        })
+);

@@ -20,10 +20,10 @@
 
 body::-webkit-scrollbar {
     width: 8px;
-background: var(--bg-color);
+    background: var(--bg-color);
 }
 
-body::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb {
     background: white;
     border-radius: 15px;
 }
@@ -396,7 +396,7 @@ footer p {
     color: var(--white);
     text-align: center;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 footer a:hover {
@@ -635,9 +635,9 @@ footer a:hover {
 }
 
 .form-register h3 {
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
-    font-weight: 300;
+    font-weight: 500;
     margin-bottom: 20px;
 }
 
@@ -647,23 +647,24 @@ footer a:hover {
     color: white;
     padding: 10px;
     border-radius: 20px;
-    margin-bottom: 16px;
-    border: 1px solid white;
-    font-size: 18px;
+    margin-bottom: 14px;
+    border: 1px solid;
+    font-size: 16px;
 }
 
 .form-register p {
     margin-bottom: 5px;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .form-register a {
     color: var(--white);
+    font-weight: 600;
 }
 
 .form-register a:hover {
-    color: white;
+    color: black;
     text-decoration: underline;
 }
 
@@ -674,14 +675,39 @@ footer a:hover {
     border: none;
     padding: 12px;
     color: white;
-    margin: 16px 0;
-    font-size: 18px;
-    font-weight: 600;
+    margin-bottom: 25px;
+    font-size: 15px;
+    font-weight: 500;
     cursor: pointer;
 }
 
 .enviar:hover {
     background: red;
+}
+
+.form-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.form-parent.error input {
+    border: 1px solid red;
+}
+
+.form-parent small {
+    color: black;
+    max-width: 350px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-parent.success input {
+    border: 1px solid #28a745;
 }
 
 
@@ -751,17 +777,13 @@ footer a:hover {
     background: red;
 }
 
-.form-parent.error input {
-border: 2px solid red;
+.cuenta {
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    margin-right: 45px;
 }
 
-.form-parent small {
-    color: black;
-    max-width: 300px;
-    text-align: center;
-    padding: 7px 0;
-} 
-
-.form-parent.success input {
-    border: 2px solid green;
+.cuenta:hover {
+    background: red;
 }
