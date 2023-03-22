@@ -67,7 +67,8 @@ html {
 .btn-comprar:hover,
 .btn-borrar:hover,
 .enviar,
-.ingresar {
+.ingresa,
+.enviar-form {
     background-color: black;
     transition: all 0.2s ease-in;
 }
@@ -194,7 +195,8 @@ html {
 }
 
 .loguin:hover,
-.registro:hover {
+.registro:hover,
+.contacto-input:hover {
     transform: scale(1.02);
     transition: all 0.3s linear;
 }
