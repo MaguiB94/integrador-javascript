@@ -625,7 +625,7 @@ footer a:hover {
 .form-register {
     width: 400px;
     background: var(--gradient);
-    padding: 30px;
+    padding: 30px 45px;
     margin-top: 40px;
     border-radius: 40px;
     text-align: center;
@@ -635,7 +635,7 @@ footer a:hover {
 }
 
 .form-register h3 {
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     font-weight: 500;
     margin-bottom: 20px;
@@ -645,11 +645,12 @@ footer a:hover {
     width: 100%;
     background: var(--gradient);
     color: white;
-    padding: 10px;
+    padding: 15px;
     border-radius: 20px;
     margin-bottom: 14px;
     border: 1px solid;
     font-size: 16px;
+    font-weight: 500;
 }
 
 .form-register p {
@@ -677,7 +678,7 @@ footer a:hover {
     color: white;
     margin-bottom: 25px;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -698,12 +699,13 @@ footer a:hover {
 }
 
 .form-parent small {
-    color: black;
+    color: white;
     max-width: 350px;
     text-align: center;
     margin-bottom: 10px;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 15px;
 }
 
 .form-parent.success input {
@@ -716,20 +718,21 @@ footer a:hover {
 .register {
     width: 400px;
     background: var(--gradient);
-    padding: 70px 25px;
-    margin-top: 40px;
+    padding: 55px 45px;
+    margin-top: 45px;
     border-radius: 40px;
     text-align: center;
     color: white;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
     box-shadow: rgba(253, 55, 55, 0.56) 0px 22px 70px 4px;
 }
 
+
 .register h3 {
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
-    font-weight: 300;
-    margin-bottom: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
 
@@ -739,9 +742,10 @@ footer a:hover {
     color: white;
     padding: 15px;
     border-radius: 20px;
-    margin-bottom: 16px;
-    border: 1px solid white;
+    margin-bottom: 14px;
+    border: 1px solid;
     font-size: 16px;
+    font-weight: 500;
 }
 
 .register p {
@@ -752,10 +756,11 @@ footer a:hover {
 
 .register a {
     color: var(--white);
+    font-weight: 600;
 }
 
 .register a:hover {
-    color: white;
+    color: black;
     text-decoration: underline;
 }
 
@@ -766,11 +771,10 @@ footer a:hover {
     border: none;
     padding: 12px;
     color: white;
-    margin: 16px 0;
-    font-size: 16px;
-    font-weight: 800;
+    margin-bottom: 25px;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
-
 }
 
 .ingresa:hover {
@@ -786,4 +790,30 @@ footer a:hover {
 
 .cuenta:hover {
     background: red;
+}
+
+.loguin-valid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.loguin-valid.error input {
+    border: 1px solid red;
+}
+
+.loguin-valid small {
+    color: white;
+    max-width: 350px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.loguin-valid.success input {
+    border: 1px solid #28a745;
 }
