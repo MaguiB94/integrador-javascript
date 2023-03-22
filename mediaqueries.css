@@ -212,15 +212,15 @@
 @media (max-width: 450px) {
     .categories {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         text-align: center;
         justify-content: center;
-        margin-bottom: 25px;
+        margin-bottom: 5px;
 
     }
 
     .category {
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 600;
     }
 
@@ -229,21 +229,21 @@
 
     .form-register,
     .register {
-        width: 90%;
+        width: 80%;
         max-width: unset;
     }
 
     .form-register h3,
     .register h3 {
         text-align: center;
-        width: 80%;
+        width: 100%;
         font-size: 16px;
         font-weight: 600;
     }
     .form-register p,
     .register p {
         text-align: center;
-        width: 80%;
+        width: 100%;
         font-size: 14px;
         font-weight: 300;
     }
