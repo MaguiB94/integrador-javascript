@@ -192,7 +192,7 @@
         font-size: 16px;
         font-weight: 600;
     }
-    .form-register,
+    .form-register p,
     .register p {
         text-align: center;
         width: 100%;
@@ -210,22 +210,6 @@
 }
 
 @media (max-width: 450px) {
-    .cart {
-      min-width: unset;
-    }
-    .cart-container {
-      align-items: center;
-    }
-    .cart-item {
-      width: 70%;
-      justify-content: center;
-      gap: 20px;
-      flex-direction: column;
-    }
-    .item-info {
-      text-align: center;
-    }
-
     .categories {
         display: flex;
         flex-wrap: wrap;
@@ -236,7 +220,38 @@
     }
 
     .category {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+
+    /*estilo para formulario de registro*/
+
+    .form-register,
+    .register {
+        width: 90%;
+        max-width: unset;
+    }
+
+    .form-register h3,
+    .register h3 {
+        text-align: center;
+        width: 80%;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .form-register p,
+    .register p {
+        text-align: center;
+        width: 80%;
         font-size: 14px;
-        font-weight: 800;
+        font-weight: 300;
+    }
+
+    .ingresa,
+    .enviar {
+        width: 80%;
+        font-size: 14px;
+        font-weight: 300;
     }
   }
