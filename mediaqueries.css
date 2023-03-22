@@ -209,7 +209,7 @@
 
 }
 
-@media (max-width: 475px) {
+@media (max-width: 300px) {
     .categories {
         display: flex;
         flex-wrap: wrap;
