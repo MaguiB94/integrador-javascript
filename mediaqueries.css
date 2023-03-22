@@ -212,7 +212,6 @@
 @media (max-width: 475px) {
     .categories {
         display: flex;
-        flex-wrap: wrap;
         text-align: center;
         justify-content: center;
         margin-bottom: 5px;
