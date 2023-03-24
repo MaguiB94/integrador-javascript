@@ -117,6 +117,12 @@ html {
     animation: fade 0.8s ease-in forwards, slide-right 0.9s ease-in-out;
 }
 
+
+
+.titulo1 {
+    animation: fade 1s ease-in forwards, slide-right 1s ease-in-out;
+}
+
 .nst:hover {
     transform: scale(1.02);
     transition: all 0.3s linear;

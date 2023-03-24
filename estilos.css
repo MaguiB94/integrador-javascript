@@ -18,6 +18,10 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body {
+    background-color: black;
+}
+
 body::-webkit-scrollbar {
     width: 8px;
     background: var(--bg-color);
