@@ -28,23 +28,26 @@
     </header>
 
     <main>
-        <form class="contactenos">
+        <form class="contactenos" action="index.html">
             <div class="contacto-container">
                 <h2>Contactenos</h2>
-                <input type="text" class="contacto-input" placeholder="Nombre completo" required>
-                <input type="email" class="contacto-input" placeholder="Email" required>
+                <input type="text" class="contacto-input" placeholder="Nombre completo" id="nombre">
+                <small></small>
+                <input type="email" class="contacto-input" placeholder="Email" id= email>
+                <small></small>
                 <textarea class="contacto-input contacto-input--message"
-                    placeholder="Escribe tu mensaje" required></textarea>
+                    placeholder="Escribe tu mensaje" id="msj"></textarea>
+                    <small></small>
 
 
-                    <input type="submit" value="Enviar" class="enviar-form">
+                    <input type="submit" value="Enviar" class="enviar-form" action="index.html">
+                    
             </div>
         </form>
     </main>
  <footer>
         <div>
             <ul class="footer-links">
-                <li><a href="https://web.whatsapp.com/" target="_blank">Contacto</a></li>
                 <li><a href="#">Promociones</a></li>
                 <li><a href="#">Terminos de uso</a></li>
             </ul>

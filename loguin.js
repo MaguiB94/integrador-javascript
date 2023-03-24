@@ -46,8 +46,6 @@ const checkUsuario = () => {
 
     if (isEmpty(usuario)) {
         showError(usuarioInput, 'El usuario es obligatorio')
-    } else if (!isBetween(usuario.length, min, max)) {
-        showError(usuarioInput, `Debe tener entre ${min} y ${max} caracteres`)
     } else {
         showSuccess(usuarioInput)
         valid = true
@@ -62,9 +60,7 @@ const checkPassword = () => {
 
     if (isEmpty(password)) {
         showError(passwordInput, 'La contraseña es obligatoria')
-    } else if (!isPasswordValid(password)) {
-        showError(passwordInput, 'La contraseña debe tener al menos 8 caracteres, una mayuscula, una minuscula, un numero y un simbolo')
-    } else {
+    }  else {
         showSuccess(passwordInput)
         valid = true
     }
