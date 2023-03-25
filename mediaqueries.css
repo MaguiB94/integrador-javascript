@@ -96,7 +96,8 @@
     }
 
     .form-register,
-    .register {
+    .register, 
+    .contactenos {
         justify-content: center;
     }
 
@@ -192,7 +193,8 @@
     }
 
     .form-register h3,
-    .register h3 {
+    .register h3,
+    .contactenos h3 {
         text-align: center;
         width: 100%;
         font-size: 16px;
@@ -209,7 +211,7 @@
 
     .ingresa,
     .enviar,
-    .enviar-form {
+    .envia {
         width: 80%;
         font-size: 14px;
         font-weight: 300;
@@ -231,7 +233,7 @@
 
     .form-register h3,
     .register h3,
-    .contactenos h2 {
+    .contactenos h3 {
         text-align: center;
         width: 100%;
     }
@@ -244,7 +246,7 @@
 
     .ingresa,
     .enviar,
-    .enviar-form {
+    .envia {
         width: 80%;
 
     }

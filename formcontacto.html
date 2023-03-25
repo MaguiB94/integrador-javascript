@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,24 +29,30 @@
     </header>
 
     <main>
-        <form class="contactenos" action="index.html">
-            <div class="contacto-container">
-                <h2>Contactenos</h2>
-                <input type="text" class="contacto-input" placeholder="Nombre completo" id="nombre">
-                <small></small>
-                <input type="email" class="contacto-input" placeholder="Email" id= email>
-                <small></small>
-                <textarea class="contacto-input contacto-input--message"
-                    placeholder="Escribe tu mensaje" id="msj"></textarea>
-                    <small></small>
+        <form class="contactenos" id="form" action= "index.html">
+            <h3>Contactenos</h3>
 
-
-                    <input type="submit" value="Enviar" class="enviar-form" action="index.html">
-                    
+            <div class="contacto-valid">
+                <input class="contacto" type="text" name="nombre" id="nombre" placeholder="Nombre completo">
+                <small></small>
             </div>
+
+            <div class="contacto-valid">
+                <input class="contacto" type="email" name="email" id="email" placeholder="Email">
+                <small></small>
+            </div>
+
+            <div class="contacto-valid">
+                <textarea class="contacto-input contacto-input--message" placeholder="Escribe tu mensaje"
+                    id="msj"></textarea>
+            </div>
+            <small></small>
+
+            <input type="submit" class="envia" value="Enviar">
         </form>
     </main>
- <footer>
+
+    <footer>
         <div>
             <ul class="footer-links">
                 <li><a href="#">Promociones</a></li>
@@ -69,6 +76,8 @@
                 <img src="./imagenes/maps1.png" alt="maps" class="maps">
             </a>
         </div>
-    </footer>   
+    </footer>
 </body>
+
+<script src="./contacto.js"></script>
 </html>

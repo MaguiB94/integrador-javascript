@@ -824,31 +824,93 @@ footer a:hover {
 
 /*formulario contacto*/
 
+/*formulario contacto*/
+
 .contactenos {
     width: 400px;
     background: var(--gradient);
-    padding: 45px 55px;
-    margin-top: 40px;
+    padding: 55px 45px;
+    margin-top: 45px;
     border-radius: 40px;
     text-align: center;
     color: white;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
     box-shadow: rgba(253, 55, 55, 0.56) 0px 22px 70px 4px;
 }
 
-.contacto-container {
+
+.contactenos h3 {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+
+.contacto {
+    width: 100%;
+    background: var(--gradient);
+    color: white;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    border: 1px solid;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.envia {
+    width: 100%;
+    background: var(--bg-color);
+    border-radius: 30px;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin-bottom: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.envia:hover {
+    background: red;
+}
+
+.cuenta {
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    margin-right: 45px;
+}
+
+.cuenta:hover {
+    background: red;
+}
+
+.contacto-valid {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 2px;
 }
 
-.contacto-container h2 {
+.contacto-valid.error input {
+    border: 1px solid red;
+}
+
+.contacto-valid small {
     color: white;
+    max-width: 350px;
     text-align: center;
-    font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.contacto-valid.success input {
+    border: 1px solid #28a745;
 }
 
 .contacto-input {
@@ -868,20 +930,4 @@ footer a:hover {
     padding: 12px 12px;
 }
 
-.enviar-form {
-    width: 100%;
-    background: var(--bg-color);
-    border-radius: 30px;
-    border: none;
-    padding: 12px;
-    color: white;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-}
 
-.enviar-form:hover {
-    background: red;
-}
